@@ -1,9 +1,7 @@
 package com.homework.booking;
 
-import com.homework.booking.empty.Bill;
-import com.homework.booking.empty.Client;
-import com.homework.booking.empty.Hotel;
-import com.homework.booking.empty.Room;
+import com.homework.booking.empty.*;
+import com.homework.booking.interfaces.IWorker;
 import com.homework.booking.service.BookingService;
 
 /**
@@ -42,7 +40,10 @@ public class Main {
         //create RoomsOfHotel
         Room[] moskovHotelRoom = new Room[]{new Room(1, 1300, true), new Room(3, 4000, true),
         new Room(2, 2100, true)};
+        IWorker[] moskovHotelWorker = new IWorker[] {new CleanerWorker("Ira", 2), new CleanerWorker("Sveta", 5)};
         Hotel moskovHotel = new Hotel("Moscow", moskovHotelRoom);
+        moskovHotel.setWorkers(moskovHotelWorker);
+        moskovHotel.getWorker();
 
         Room[] orenburgHotelRoom = new Room[]{new Room(5, 4300, true), new Room(2, 1000, true),
                 new Room(4, 2100, true)};

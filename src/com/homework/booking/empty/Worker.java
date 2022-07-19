@@ -2,7 +2,7 @@ package com.homework.booking.empty;
 
 import com.homework.booking.interfaces.IWorker;
 
-public class Worker implements IWorker {
+public abstract class Worker implements IWorker {
 
     private String name;
     private int experience;
@@ -20,6 +20,14 @@ public class Worker implements IWorker {
     @Override
     public int getExperience() {
         return experience;
+    }
+
+    @Override
+    public String toString() {
+        return "Worker{" +
+                "name='" + name + '\'' +
+                ", experience=" + experience +
+                '}';
     }
 
     public void setName(String name) {

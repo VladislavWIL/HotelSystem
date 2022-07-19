@@ -1,9 +1,12 @@
 package com.homework.booking.empty;
 
+import com.homework.booking.interfaces.IWorker;
+
 public class Hotel {
 
     private String nameHotel;
     private Room[] rooms;
+    private IWorker[] workers;
 
     public Hotel(String nameHotel, Room[] rooms) {
         this.nameHotel = nameHotel;
@@ -31,6 +34,16 @@ public class Hotel {
         for (Room room : rooms) {
             tempNumber++;
             System.out.println("№ " +tempNumber + " - " + room.isFree());
+        }
+    }
+
+    public void setWorkers(IWorker[] workers) {
+        this.workers = workers;
+    }
+
+    public void getWorker() {
+        for (IWorker worker : workers) {
+            System.out.println(worker);
         }
     }
 }
